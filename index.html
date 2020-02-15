@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editor de Texto Rich em Javascript</title>
+    <link href="css/all.css" rel="stylesheet">
+    
+</head>
+<body onload="enableEditMod();">
+    <div>
+        <button onclick="execCmd('bold');">
+            <i class="fa fa-bold"></i>
+        </button>
+    </div>
+    <iframe name="richTextField" style="width: 1000px; height: 500px;"
+    frameborder="0"></iframe>
+
+    <script type="text/javascript">
+        function enableEditMod() {
+            richTextField.document.designMode = 'On';
+        }
+
+        function execCmd(command) {
+            richTextField.document.execCommand(command, false, null);
+        }
+    </script>
+</body>
+</html>
